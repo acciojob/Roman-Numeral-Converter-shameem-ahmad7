@@ -10,6 +10,18 @@ function convertToRoman(num) {
     };
 
   //your code here
+	let result = ''; // To store the final Roman numeral result
+
+    // Iterate over each symbol and its value
+    for (let [symbol, value] of romanNumerals) {
+        // While the current number is greater than or equal to the value
+        while (num >= value) {
+            result += symbol; // Append the symbol to the result
+            num -= value;     // Subtract the value from the number
+        }
+    }
+
+    return result; // Return the final Roman numeral string
 
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
